@@ -1,0 +1,30 @@
+
+loaded the linux kernel image to the DDR memory from MMC 0 (sd card) interface
+load mmc 0:1 0x82000000 uImage
+
+
+loaded the dtb image to the DDR memory from MMC 0 (sd card) interface
+am335x-boneblack.dtb
+load mmc 0:1 0x88000000 am335x-boneblack.dtb
+
+
+send bootargs to the linux kernel from u-boot
+setenv bootargs console=ttyO0,115200 root=/dev/mmcblk0p2 rw
+
+boot from memory command
+bootm 0x82000000 - 0x88000000
+
+command to import env variables from memory address
+env import -t <memory addr> <size in bytes>
+
+
+
+
+
+
+
+
+
+
+
+
